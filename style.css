@@ -1,0 +1,193 @@
+/* 
+  Modern Design System for Registration Forms 
+  Author: Antigravity
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #0066FF;
+    --primary-hover: #0052CC;
+    --secondary-color: #00CC66;
+    --bg-gradient: linear-gradient(135deg, #0066FF 0%, #00D4FF 100%);
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --text-main: #282D31;
+    --text-muted: #53575A;
+    --border-color: #DFE0E0;
+    --input-focus: #0066FF;
+    --error-color: #ef4444;
+    --shadow: 0 10px 25px -5px rgba(40, 45, 49, 0.1), 0 8px 10px -6px rgba(40, 45, 49, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-gradient);
+    background-image: url('Logo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: var(--text-main);
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+
+/* Form Styles */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.titulo {
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.subtitulo {
+    font-size: 14px;
+    color: var(--text-muted);
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Sections */
+.form-section {
+    border-top: 1px solid var(--border-color);
+    padding: 20px 10px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 12px;
+}
+
+.form-section:hover {
+    background-color: rgba(79, 70, 229, 0.03);
+}
+
+.section-label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* Input Styles */
+.input-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: var(--text-main);
+}
+
+input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    background-color: white;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.15);
+    transform: translateY(-1px);
+}
+
+input::placeholder {
+    color: #9ca3af;
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+#btnAlternarVista {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+
+
+/* Error Message */
+.mensaje {
+    font-size: 13px;
+    text-align: center;
+    margin-top: 10px;
+    min-height: 20px;
+}
+
+.mensaje.error {
+    color: var(--error-color);
+}
+
+.mensaje.success {
+    color: var(--secondary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .container {
+        padding: 25px;
+    }
+}

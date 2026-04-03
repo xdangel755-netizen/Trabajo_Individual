@@ -1,0 +1,210 @@
+/* Estilos para el Dashboard */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --color-primario: blue;
+    --color-secundario: #00CC66;
+    --color-terciario: turquoise;
+    --color-fondo: rgba(255, 255, 255, 0.15);
+    /* Glassmorphism */
+    --color-texto: #333333;
+    --color-sombra: rgba(0, 0, 0, 0.1);
+    --fuente-principal: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--fuente-principal);
+    background-color: var(--color-primario);
+    background-image: url('../Mi_logo.jpeg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+
+/* Sidebar Estilo Glassmorphism */
+.sidebar {
+    width: 260px;
+    background: var(--color-fondo);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    padding: 2em 1em;
+    color: #fff;
+    box-shadow: 4px 0 10px var(--color-sombra);
+    z-index: 10;
+}
+
+.sidebar h2 {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 2em;
+    color: #fff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 1em;
+}
+
+.sidebar nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.8em 1.2em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 0.8em;
+    transition: all 0.3s ease;
+}
+
+.sidebar nav ul li a:hover,
+.sidebar nav ul li a.active {
+    background: var(--color-secundario);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transform: translateX(5px);
+}
+
+.logout-btn {
+    margin-top: auto;
+    background: var(--color-terciario);
+    color: #fff;
+    text-align: center;
+    padding: 0.8em;
+    border-radius: 0.8em;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    background: var(--color-primario);
+    transform: scale(1.02);
+}
+
+/* Content Area */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    overflow-y: auto;
+}
+
+.header {
+    background: var(--color-fondo);
+    backdrop-filter: blur(10px);
+    border-radius: 1em;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 1.5em 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2em;
+    box-shadow: 0 4px 10px var(--color-sombra);
+    color: #fff;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 1.8em;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 600;
+}
+
+.user-profile i {
+    font-size: 1.5em;
+    background: var(--color-secundario);
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Dashboard Cards */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2em;
+}
+
+.dash-card {
+    background: var(--color-fondo);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 1em;
+    padding: 2em;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 15px var(--color-sombra);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dash-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.card-info h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.card-info p {
+    margin: 0;
+    font-size: 2em;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.dash-card i {
+    font-size: 3em;
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 80px;
+        align-items: center;
+    }
+
+    .sidebar h2 {
+        font-size: 1em;
+        display: none;
+    }
+
+    .sidebar nav ul li a span {
+        display: none;
+    }
+
+    .sidebar nav ul li a {
+        justify-content: center;
+        padding: 1em;
+    }
+
+    .logout-btn span {
+        display: none;
+    }
+}
